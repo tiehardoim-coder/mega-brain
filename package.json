@@ -75,7 +75,7 @@
   "scripts": {
     "start": "node bin/mega-brain.js",
     "install-wizard": "node bin/mega-brain.js install",
-    "validate": "node bin/mega-brain.js validate",
+    "validate": "npm run validate:json && npm run validate:layers",
     "validate:layers": "node bin/validate-package.js",
     "validate:json": "python3 engine/intelligence/validation/validate_json_integrity.py",
     "lint": "ruff check engine/ .claude/hooks/",
