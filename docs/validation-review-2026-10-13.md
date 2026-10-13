@@ -33,3 +33,10 @@ Os 590 itens são pendências do classificador interno, não uma conclusão de e
 1. Reconciliar o classificador com os caminhos efetivamente distribuídos.
 2. Restaurar ou fornecer a suíte `tests/python/` referenciada pelos scripts e workflows.
 3. Configurar o ambiente de execução e validar ingestão e consultas com dados de teste antes do uso operacional.
+
+## Confirmação no GitHub Actions
+
+No PR #1, a execução `quality` falhou porque `tests/python/` não existe. A execução `validate` passou pelas etapas JSON e YAML, mas falhou ao tentar executar o script inexistente `validate:capability-views`. Esses problemas já decorrem dos arquivos do snapshot de entrada; este PR altera apenas o comando geral de validação e documenta as limitações.
+
+- [Falha da suíte ausente](https://github.com/tiehardoim-coder/mega-brain/actions/runs/38416669002/job/115362823343).
+- [Falha do script ausente](https://github.com/tiehardoim-coder/mega-brain/actions/runs/38416668998/job/115362822442).
